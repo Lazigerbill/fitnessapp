@@ -1,13 +1,27 @@
 <h1>Welcome to BenFitness</h1>
 <p>Below is a list of all fitness instructors you may have access to:</p>
 
-<% @instructors.each do |instructor| %>
-	<p>First name: </p> <%= instructor.first_name %> 
-	<p>Last name: </p> <%= instructor.last_name %>
-	<p>Phone no.: </p> <%= instructor.phone %>
-	<p>Photo: </p> <%= instructor.photo_url %>
-	<p>Address: </p> <%= instructor.street_address + ", " + instructor.city %>
-	<p>Expertise: </p> <%= instructor.expertise %>
-<% end %>
+
+<table>
+	<thead>
+		<tr>
+			<th>Instructor</th>
+			<th>Phone no.</th>
+			<th>Address</th>
+			<th>Expertise</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @instructors.each do |instructor| %>
+			<tr>
+				<td><%= instructor.first_name %> <%= instructor.last_name %></td>
+				<td><%= instructor.phone %></td>
+				<td><%= instructor.street_address + ", " + instructor.city %></td>
+				<td><%= instructor.expertise %></td>
+				<td><button></button></td>
+			</tr>
+		<% end %>
+	</tbody>
 
 

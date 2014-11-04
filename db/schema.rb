@@ -11,12 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141104190144) do
+ActiveRecord::Schema.define(version: 20141104194236) do
 
   create_table "instructors", force: true do |t|
     t.string   "first_name"
     t.string   "last_name"
-    t.integer  "phone"
     t.string   "photo_url"
     t.string   "street_address"
     t.string   "city"
@@ -24,6 +23,7 @@ ActiveRecord::Schema.define(version: 20141104190144) do
     t.string   "expertise"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "phone"
   end
 
 end
