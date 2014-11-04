@@ -1,6 +1,14 @@
 Rails.application.routes.draw do
 
-  resources :instructors, only: [:index, :show]
+  resources :instructors, only: [:index, :show] do
+    collection do
+      get :markers
+    end
+
+    member do 
+      get :marker
+    end
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

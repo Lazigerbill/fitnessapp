@@ -7,7 +7,16 @@
 <p>Postal code: <%= @instructor.postal_code %></p>
 <p>Expertise: <%= @instructor.expertise %></p>
 
+<%= hidden_field_tag :instructor_id, @instructor.id %>
+
+<div style='width: 400px;' class='instructor_map'>
+	<div id="map" style='width: 400px; height: 400px;'></div>
+</div>
+
 <%= link_to "back to index", instructors_path %>
 
 <button>Book an Appointment</button>
 
+<script>
+
+</script>

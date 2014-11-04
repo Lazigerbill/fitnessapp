@@ -41,4 +41,6 @@ gem 'spring',        group: :development
 gem 'faker'
 gem 'hirb', '~> 0.7.2'
 gem 'geocoder'
+gem 'gmaps4rails'
+gem 'underscore-rails'
 
