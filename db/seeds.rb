@@ -5,3 +5,15 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+
+(1..10).each do |i|
+  Instructor.create(
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
+    phone: Faker::PhoneNumber.cell_phone,
+    street_address: Faker::Address.street_address,
+    city: Faker::Address.city,
+    postal_code: Faker::Address.postcode,
+    expertise: Faker::Commerce.department(3, true))
+end
