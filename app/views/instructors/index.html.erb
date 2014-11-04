@@ -1,5 +1,5 @@
 <h1>Welcome to BenFitness</h1>
-<p>Below is a list of all fitness instructors you may have access to:</p>
+<p>Below is a list of all the fitness instructors you may have access to:</p>
 
 
 <table>
@@ -19,7 +19,7 @@
 				<td><%= instructor.phone %></td>
 				<td><%= instructor.street_address + ", " + instructor.city %></td>
 				<td><%= instructor.expertise %></td>
-				<td><button></button></td>
+				<td><button><%= link_to "Profile", instructor_path(instructor) %></button></td>
 			</tr>
 		<% end %>
 	</tbody>

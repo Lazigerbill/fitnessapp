@@ -1,2 +1,13 @@
-<h1>Instructors#show</h1>
-<p>Find me in app/views/instructors/show.html.erb</p>
+<h1>Instructors show page</h1>
+
+<p>Name: <%= @instructor.first_name %> <%= @instructor.last_name %></p>
+<p>Phone no.: <%= @instructor.phone %></p>
+<p>Street address: <%= @instructor.street_address %></p>
+<p>City: <%= @instructor.city %></p>
+<p>Postal code: <%= @instructor.postal_code %></p>
+<p>Expertise: <%= @instructor.expertise %></p>
+
+<%= link_to "back to index", instructors_path %>
+
+<button>Book an Appointment</button>
+
