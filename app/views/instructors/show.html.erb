@@ -1,5 +1,5 @@
 <h1>Instructors show page</h1>
-
+<%= image_tag @instructor.avatar.url(:medium) %>
 <p>Name: <%= @instructor.first_name %> <%= @instructor.last_name %></p>
 <p>Phone no.: <%= @instructor.phone %></p>
 <p>Street address: <%= @instructor.street_address %></p>

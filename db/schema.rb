@@ -11,12 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141104204031) do
+ActiveRecord::Schema.define(version: 20141105061240) do
 
   create_table "instructors", force: true do |t|
     t.string   "first_name"
     t.string   "last_name"
-    t.string   "photo_url"
     t.string   "street_address"
     t.string   "city"
     t.string   "postal_code"
@@ -26,6 +25,10 @@ ActiveRecord::Schema.define(version: 20141104204031) do
     t.string   "phone"
     t.float    "longitude"
     t.float    "latitude"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
 end

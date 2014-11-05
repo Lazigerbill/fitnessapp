@@ -56,7 +56,7 @@ class InstructorsController < ApplicationController
     @instructor = Instructor.find(params[:id])
   end
   def instructor_params
-    params.require(:instructor).permit(:first_name, :last_name, :phone, :street_address, :city, :postal_code, :expertise)
+    params.require(:instructor).permit(:first_name, :last_name, :phone, :street_address, :city, :postal_code, :expertise, :avatar)
   end
 
 end
