@@ -1,6 +1,6 @@
 class InstructorsController < ApplicationController
   before_action :set_instructor, only: [:show, :edit, :update, :destroy]
-  skip_before_filter :require_login
+  skip_before_filter :require_login, except: [:edit]
   def index
     @instructors = Instructor.all
   end
