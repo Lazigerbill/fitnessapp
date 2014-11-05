@@ -17,6 +17,7 @@ Rails.application.routes.draw do
     end
   end
 
+  default_url_options :host => "http://0.0.0.0:3000"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
