@@ -10,6 +10,7 @@
 			<th>Address</th>
 			<th>Expertise</th>
 			<th></th>
+			<th></th>
 		</tr>
 	</thead>
 	<tbody>
@@ -19,7 +20,8 @@
 				<td><%= instructor.phone %></td>
 				<td><%= instructor.street_address + ", " + instructor.city %></td>
 				<td><%= instructor.expertise %></td>
-				<td><button><%= link_to "Profile", instructor_path(instructor) %></button></td>
+				<td><button><%= link_to "show", instructor_path(instructor) %></button></td>
+				<td><button><%= link_to "Edit", edit_instructor_path(instructor) %></button></td>
 			</tr>
 		<% end %>
 	</tbody>

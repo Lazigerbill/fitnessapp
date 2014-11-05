@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  resources :instructors, only: [:index, :show] do
+  resources :instructors do
     collection do
       get :markers
     end

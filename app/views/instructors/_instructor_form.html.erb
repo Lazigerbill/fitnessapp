@@ -1,0 +1,18 @@
+<%= form_for @instructor do |f| %>
+	<%= f.label :first_name %> <br>
+	<%= f.text_field :first_name %> <br>
+	<%= f.label :last_name %> <br>
+	<%= f.text_field :last_name %> <br>
+	<%= f.label :phone %> <br>
+	<%= f.text_field :phone %> <br>
+	<%= f.label :street_address %> <br>
+	<%= f.text_field :street_address %> <br>
+	<%= f.label :city %> <br>
+	<%= f.text_field :city %> <br>
+	<%= f.label :postal_code %> <br>
+	<%= f.text_field :postal_code %> <br>
+	<%= f.label :expertise %> <br>
+	<%= f.text_field :expertise %> <br>
+	<br>
+	<%= f.submit %>
+<% end %>

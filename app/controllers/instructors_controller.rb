@@ -1,10 +1,32 @@
 class InstructorsController < ApplicationController
+  before_action :set_instructor, only: [:show, :edit, :update, :destroy]
+
   def index
     @instructors = Instructor.all
   end
 
   def show
-    @instructor = Instructor.find(params[:id])
+
+  end
+
+  def new 
+    @instructor = Instructor.new
+  end
+
+  def edit
+
+  end
+
+  def update
+    if @instructor.update_attributes(instructor_params)
+      redirect_to @instructor, notice: 'Instructor profile is successfully updated.' 
+    else
+      render 'edit', notice: 'error'
+    end
+  end
+
+  def destroy
+
   end
 
   def marker
@@ -27,6 +49,14 @@ class InstructorsController < ApplicationController
     respond_to do |format|
       format.json { render :json => @hash }
     end
+  end
+
+  private
+  def set_instructor
+    @instructor = Instructor.find(params[:id])
+  end
+  def instructor_params
+    params.require(:instructor).permit(:first_name, :last_name, :phone, :street_address, :city, :postal_code, :expertise)
   end
 
 end
