@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
 
+  resources :user_sessions
+  resources :password_resets
+  resources :users
+
+  get 'login' => 'user_sessions#new', :as => :login
+  post 'logout' => 'user_sessions#destroy', :as => :logout
+  
   resources :instructors do
     collection do
       get :markers
@@ -10,11 +17,12 @@ Rails.application.routes.draw do
     end
   end
 
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-root 'instructors#index'
+  root 'instructors#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

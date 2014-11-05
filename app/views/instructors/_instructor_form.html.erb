@@ -1,4 +1,5 @@
 <%= form_for @instructor do |f| %>
+	<%= image_tag @instructor.avatar.url(:thumb) %> <br>
 	<%= f.file_field :avatar %> <br>
 	<%= f.label :first_name %> <br>
 	<%= f.text_field :first_name %> <br>
