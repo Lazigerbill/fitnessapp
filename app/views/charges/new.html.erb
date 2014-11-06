@@ -1,0 +1,12 @@
+<%= form_tag charges_path do %>
+  <article>
+    <label class="amount">
+      <span>Amount: $50.00</span>
+    </label>
+  </article>
+
+  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          data-key="<%= Figaro.env.stripe_publishable_key %>"
+          data-description="Charging for one session"
+          data-amount="5000"></script>
+<% end %>
