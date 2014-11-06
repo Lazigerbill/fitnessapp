@@ -1,5 +1,17 @@
 Rails.application.routes.draw do
 
+  get 'appointments/index'
+
+  get 'appointments/edit'
+
+  get 'appointments/new'
+
+  get 'appointments/create'
+
+  get 'appointments/delete'
+
+  get 'appointments/show'
+
   resources :user_sessions
   resources :password_resets
   resources :users
@@ -8,6 +20,8 @@ Rails.application.routes.draw do
   post 'logout' => 'user_sessions#destroy', :as => :logout
   
   resources :instructors do
+    resources :appointments, shallow: true
+
     collection do
       get :markers
     end

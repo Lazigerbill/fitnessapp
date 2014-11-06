@@ -15,7 +15,7 @@
 
 <%= link_to "back to index", instructors_path %>
 
-<button>Book an Appointment</button>
+<%= button_to "Book a session", new_instructor_appointment_path(@instructor), method: 'get' %>
 
 <script>
 
