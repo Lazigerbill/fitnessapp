@@ -1,17 +1,5 @@
 Rails.application.routes.draw do
-
-  get 'appointments/index'
-
-  get 'appointments/edit'
-
-  get 'appointments/new'
-
-  get 'appointments/create'
-
-  get 'appointments/delete'
-
-  get 'appointments/show'
-
+  resources :charges
   resources :user_sessions
   resources :password_resets
   resources :users

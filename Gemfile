@@ -45,5 +45,6 @@ gem 'geocoder'
 gem 'gmaps4rails'
 gem 'underscore-rails'
 gem "paperclip", "~> 4.2"
-gem "sorcery"
-
+gem 'sorcery'
+gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
+gem 'figaro'
