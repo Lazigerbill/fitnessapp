@@ -1,5 +1,6 @@
 class ChargesController < ApplicationController
   def new
+    @instructor = Instructor.find(params[:instructor_id])
   end
 
   def create
@@ -18,8 +19,11 @@ class ChargesController < ApplicationController
       :currency    => 'cad'
     )
 
+    Appointment.find(params[:appointment_id]).update_attributes(session_paid: true)
+    redirect_to instructor_appointment_path(params[:instructor_id], params[:appointment_id])
+
   rescue Stripe::CardError => e
     flash[:error] = e.message
-    redirect_to charges_path
+    redirect_to instructor_appointment_path
   end
 end

@@ -1,0 +1,32 @@
+<table>
+	<thead>
+		<tr>
+			<th></th>
+			<th>Instructor</th>
+			<th>Expertise</th>
+			<th>Phone no.</th>
+			<th>Address</th>
+			<th>Proximity</th>
+			<th></th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @instructors.each do |instructor| %>
+			<tr>
+				<td><%= image_tag instructor.avatar.url(:thumb) %></td>
+				<td><%= instructor.first_name %> <%= instructor.last_name %></td>
+				<td><%= instructor.phone %></td>
+				<td><%= instructor.street_address + ", " + instructor.city %></td>
+				<td><%= instructor.expertise %></td>
+				<td></td>
+				<td><button><%= link_to "Details", instructor_path(instructor) %></button></td>
+				<td><button><%= link_to "Edit", edit_instructor_path(instructor) %></button></td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>
+<br>
+<div style='width: 600px;' class='instructor_map'>
+	<div id="map" style='width: 600px; height: 400px;'></div>
+</div>

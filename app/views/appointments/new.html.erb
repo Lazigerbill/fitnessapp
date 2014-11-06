@@ -1,4 +1,4 @@
-<h1>Schedule a session</h1>
+<h1>Schedule a session with <%= @instructor.first_name %></h1>
 
 <!-- Instructor info box -->
 <%= image_tag @instructor.avatar.url(:medium) %>
@@ -9,7 +9,7 @@
 
 <%= form_for [@instructor, @appointment] do |f| %>
 	<%= f.label :session_start, "Choose session start time" %>
-	<%= f.datetime_select :session_start, :ampm => true, :minute_step => 30%>
+	<%= f.datetime_select :session_start, :ampm => true, :minute_step => 30 %>
 	<%= f.submit "Proceed to payment" %>
 <% end %>
 

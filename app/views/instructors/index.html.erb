@@ -1,34 +1,12 @@
 <h1>Welcome to GymHero</h1>
 <p>Below is a list of all the fitness instructors you may have access to:</p>
 
+<% if current_user %>
 
-<table>
-	<thead>
-		<tr>
-			<th></th>
-			<th>Instructor</th>
-			<th>Phone no.</th>
-			<th>Address</th>
-			<th>Expertise</th>
-			<th></th>
-			<th></th>
-		</tr>
-	</thead>
-	<tbody>
-		<% @instructors.each do |instructor| %>
-			<tr>
-				<td><%= image_tag instructor.avatar.url(:thumb) %></td>
-				<td><%= instructor.first_name %> <%= instructor.last_name %></td>
-				<td><%= instructor.phone %></td>
-				<td><%= instructor.street_address + ", " + instructor.city %></td>
-				<td><%= instructor.expertise %></td>
-				<td><button><%= link_to "show", instructor_path(instructor) %></button></td>
-				<td><button><%= link_to "Edit", edit_instructor_path(instructor) %></button></td>
-			</tr>
-		<% end %>
-	</tbody>
-</table>
-<br>
-<div style='width: 600px;' class='instructor_map'>
-	<div id="map" style='width: 600px; height: 400px;'></div>
-</div>
+	<%= render "loggedin" %>
+
+<% else %>
+
+	<%= render "not_loggedin" %>
+
+<% end %>

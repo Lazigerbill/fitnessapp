@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :charges
+  
   resources :user_sessions
   resources :password_resets
   resources :users
@@ -8,8 +8,10 @@ Rails.application.routes.draw do
   post 'logout' => 'user_sessions#destroy', :as => :logout
   
   resources :instructors do
-    resources :appointments, shallow: true
-
+    resources :appointments do
+      resources :charges
+    end
+    
     collection do
       get :markers
     end
