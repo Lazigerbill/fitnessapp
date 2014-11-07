@@ -19,7 +19,7 @@
 				<td><%= instructor.phone %></td>
 				<td><%= instructor.street_address + ", " + instructor.city %></td>
 				<td><%= instructor.expertise %></td>
-				<td></td>
+				<td><%= instructor.distance_to(Geocoder.coordinates(current_user.postal_code)) %></td>
 				<td><button><%= link_to "Details", instructor_path(instructor) %></button></td>
 				<td><button><%= link_to "Edit", edit_instructor_path(instructor) %></button></td>
 			</tr>
