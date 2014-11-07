@@ -4,7 +4,7 @@
 
 	<%= render 'form' %>
 
-	<%= link_to 'cancel', root_path %><br><br>
+	<%= link_to "Sign up", new_user_path %> | <%= link_to 'cancel', root_path %><br><br>
 
 	<h1>Forgot Password?</h1><br>	
 	<%= form_tag password_resets_path, :method => :post do %>
