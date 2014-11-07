@@ -1,26 +1,37 @@
-<table>
-	<thead>
-		<tr>
-			<th></th>
-			<th>Instructor</th>
-			<th>Expertise</th>
-			<th>Area</th>
-			<th></th>
-		</tr>
-	</thead>
-	<tbody>
-		<% @instructors.each do |instructor| %>
-			<tr>
-				<td><%= image_tag instructor.avatar.url(:thumb) %></td>
-				<td><%= instructor.first_name %> <%= instructor.last_name %></td>
-				<td><%= instructor.expertise %></td>
-				<td><%= instructor.city %></td>
-				<td><button><%= link_to "Details", instructor_path(instructor) %></button></td>
-			</tr>
-		<% end %>
-	</tbody>
-</table>
-<br>
-<div style='width: 600px;' class='instructor_map'>
-	<div id="map" style='width: 600px; height: 400px;'></div>
+<div class="hero">
+	<div class="hero-inner">
+    <a href="" class="hero-logo"><img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_1.png
+" alt="Logo Image"></a>
+
+		<div class="hero-copy">
+			<h1>GymHero v1.0</h1>
+			<p>This is a demo app where users can book personal fitness trainers online.</p>	
+		</div>
+    <button><%= link_to "Login", :login %></button><br>
+    <%= link_to "Register", new_user_path, :style => "color:white" %>
+	</div>
 </div>
+
+<div class="instructor-list">
+	<% @instructors.each do |instructor| %>
+		<div class="comment">
+		  <div class="comment-image">
+		    <%= image_tag instructor.avatar.url(:thumb), :class => "index-pic" %>
+		  </div>
+		  <div class="comment-content">
+		    <h1><%= instructor.first_name %> <%= instructor.last_name %></h1>
+		    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea a explicabo sapiente consectetur officiis nostrum neque repellat nisi cum quidem, reprehenderit magnam voluptatibus cupiditate. In, quia velit id delectus consequuntur!</p>
+		    <p>Service area: <%= instructor.city %></p>
+		    <p class="comment-detail">Expertise: <%= instructor.expertise %></p>
+		  </div>
+		</div>
+	<% end %>
+</div>
+
+<div style='width: 650px;' class='instructor_map'>
+	<div id="map" style='width: 650px; height: 500px;'></div>
+</div>
+
+
+
+

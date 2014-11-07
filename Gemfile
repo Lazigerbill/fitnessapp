@@ -48,3 +48,6 @@ gem "paperclip", "~> 4.2"
 gem 'sorcery'
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 gem 'figaro'
+gem 'bourbon'
+gem 'neat'
+gem 'bitters'

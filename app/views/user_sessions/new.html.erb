@@ -1,13 +1,16 @@
-<h1>Login</h1>
 
-<%= render 'form' %>
+<div class="login">
+	<h1>Login</h1><br>
 
-<%= link_to 'Back', user_sessions_path %>
+	<%= render 'form' %>
 
-<h1>Forgot Password?</h1>
-<%= form_tag password_resets_path, :method => :post do %>
-  <div class="field">
-    <%= label_tag :email %><br />
-    <%= text_field_tag :email %> <%= submit_tag "Reset my password!" %>
-  </div>
-<% end %>
+	<%= link_to 'cancel', root_path %><br><br>
+
+	<h1>Forgot Password?</h1><br>	
+	<%= form_tag password_resets_path, :method => :post do %>
+	  <div class="field">
+	    <%= label_tag :email %>
+	    <%= text_field_tag :email %> <%= submit_tag "Reset my password!" %>
+	  </div>
+	<% end %>
+</div>

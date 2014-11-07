@@ -14,7 +14,7 @@
 	<tbody>
 		<% @instructors.each do |instructor| %>
 			<tr>
-				<td><%= image_tag instructor.avatar.url(:thumb) %></td>
+				<td><%= image_tag instructor.avatar.url(:thumb), :class => "index-pic" %></td>
 				<td><%= instructor.first_name %> <%= instructor.last_name %></td>
 				<td><%= instructor.phone %></td>
 				<td><%= instructor.street_address + ", " + instructor.city %></td>
