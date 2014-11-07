@@ -1,4 +1,4 @@
-<table>
+<table class="instructor-table responsive no-wrap">
 	<thead>
 		<tr>
 			<th></th>
@@ -16,12 +16,12 @@
 			<tr>
 				<td><%= image_tag instructor.avatar.url(:thumb), :class => "index-pic" %></td>
 				<td><%= instructor.first_name %> <%= instructor.last_name %></td>
+				<td><%= instructor.expertise %></td>
 				<td><%= instructor.phone %></td>
 				<td><%= instructor.street_address + ", " + instructor.city %></td>
-				<td><%= instructor.expertise %></td>
-				<td><%= instructor.distance_to(Geocoder.coordinates(current_user.postal_code)) %></td>
-				<td><button><%= link_to "Details", instructor_path(instructor) %></button></td>
-				<td><button><%= link_to "Edit", edit_instructor_path(instructor) %></button></td>
+				<td><%= instructor.distance_to(@my_location).round(1) %>km</td>
+				<td><%= button_to "Details", instructor_path(instructor), method: :get %></td>
+				<td><%= button_to "Edit", edit_instructor_path(instructor), method: :get, :style => "background-color:red" %></td>
 			</tr>
 		<% end %>
 	</tbody>

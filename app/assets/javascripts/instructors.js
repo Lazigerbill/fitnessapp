@@ -11,6 +11,7 @@ var showReady = function() {
 			handler.getMap().setZoom(12);
 		});
 	});
+
 };
 
 $(document).ready(function(){
@@ -35,6 +36,10 @@ var indexReady = function() {
 			handler.fitMapToBounds();
 		});
 	});
+	$('.instructor-table').DataTable({
+		"order": [[ 5, "asc" ]]
+	});
+		responsive: true
 };
 
 $(document).ready(function(){

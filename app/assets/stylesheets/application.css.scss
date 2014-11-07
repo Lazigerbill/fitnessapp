@@ -2,6 +2,8 @@
 @import "bourbon";
 @import "base/base";
 @import "neat";
+@import "dataTables/bootstrap/3/jquery.dataTables.bootstrap";
+@import "dataTables/extras/dataTables.responsive";
 @import "scaffolds";
 @import "layouts";
 @import "instructors";

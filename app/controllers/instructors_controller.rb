@@ -3,8 +3,7 @@ class InstructorsController < ApplicationController
   skip_before_filter :require_login, except: [:edit]
   def index
     @instructors = Instructor.all
-    my_location = Geocoder.coordinates(current_user.postal_code)
-    binding.pry
+    @my_location = Geocoder.coordinates(current_user.postal_code)
   end
 
   def show

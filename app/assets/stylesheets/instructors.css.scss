@@ -119,7 +119,12 @@
   }
 }
 
-
+#DataTables_Table_0_wrapper {
+	margin: 5em;
+	// @include outer-container;
+	// @include span-columns(10);
+	// @include shift(1);
+}
 
 .instructor-list {
 	@include span-columns(6);
