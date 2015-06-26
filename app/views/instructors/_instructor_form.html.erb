@@ -1,20 +1,20 @@
 <%= form_for @instructor do |f| %>
-	<%= image_tag @instructor.avatar.url(:thumb) %> <br>
-	<%= f.file_field :avatar %> <br>
-	<%= f.label :first_name %> <br>
-	<%= f.text_field :first_name %> <br>
-	<%= f.label :last_name %> <br>
-	<%= f.text_field :last_name %> <br>
-	<%= f.label :phone %> <br>
-	<%= f.text_field :phone %> <br>
-	<%= f.label :street_address %> <br>
-	<%= f.text_field :street_address %> <br>
-	<%= f.label :city %> <br>
-	<%= f.text_field :city %> <br>
-	<%= f.label :postal_code %> <br>
-	<%= f.text_field :postal_code %> <br>
-	<%= f.label :expertise %> <br>
-	<%= f.text_field :expertise %> <br>
+	<%= image_tag @instructor.avatar.url(:thumb) %>
+	<%= f.file_field :avatar %> 
+	<%= f.label :first_name %>
+	<%= f.text_field :first_name %>
+	<%= f.label :last_name %> 
+	<%= f.text_field :last_name %> 
+	<%= f.label :phone %> 
+	<%= f.text_field :phone %> 
+	<%= f.label :street_address %> 
+	<%= f.text_field :street_address %> 
+	<%= f.label :city %> 
+	<%= f.text_field :city %> 
+	<%= f.label :postal_code %> 
+	<%= f.text_field :postal_code %> 
+	<%= f.label :expertise %> 
+	<%= f.text_field :expertise %> 
 	<br>
-	<%= f.submit %>
+	<%= f.submit %>    <%= link_to "back", root_path %>
 <% end %>

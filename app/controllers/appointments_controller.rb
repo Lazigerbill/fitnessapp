@@ -3,6 +3,19 @@ class AppointmentsController < ApplicationController
   end
 
   def edit
+    @instructor = Instructor.find(params[:instructor_id])
+    @appointment = Appointment.find(params[:id])
+  end
+
+  def update
+    @appointment = Appointment.find(params[:id])
+    @instructor = Instructor.find(params[:instructor_id])
+    if @appointment.update_attributes(appointment_params)
+      @instructor.session_end = @appointment.session_start + 60*60
+      redirect_to new_instructor_appointment_charge_path(@instructor, @appointment), notice: 'Appointment is successfully rescheduled.' 
+    else
+      render 'edit', notice: 'error'
+    end
   end
 
   def new

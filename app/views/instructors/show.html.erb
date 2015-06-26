@@ -1,4 +1,4 @@
-<h1>Instructors show page</h1>
+<h1>Instructors show page</h1><br>
 <%= image_tag @instructor.avatar.url(:medium) %>
 <p>Name: <%= @instructor.first_name %> <%= @instructor.last_name %></p>
 <p>Phone no.: <%= @instructor.phone %></p>
@@ -9,14 +9,11 @@
 
 <%= hidden_field_tag :instructor_id, @instructor.id %>
 
-<div style='width: 400px;' class='instructor_map'>
+<div style='width: 400px;' class='instructor_show_map'>
 	<div id="map" style='width: 400px; height: 400px;'></div>
-</div>
+</div><br>
 
-<%= link_to "back to index", instructors_path %>
 
-<%= button_to "Book a session", new_instructor_appointment_path(@instructor), method: 'get' %>
+<%= button_to "Book a session", new_instructor_appointment_path(@instructor), method: 'get' %>  
+<%= link_to "back to index", instructors_path %><br><br>
 
-<script>
-
-</script>

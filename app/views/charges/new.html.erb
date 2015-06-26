@@ -1,14 +1,24 @@
-<%= form_tag instructor_appointment_charges_path do %>
-  <article>
-    <label class="amount">
-      <span>Amount: $50.00</span>
-    </label>
-  </article>
+<div class="login">
+  <h1>Payment</h1><br>
+  <p>You will be charged $50.00CAD for 1 training session with <%=@instructor.first_name %> <%= @instructor.last_name %></p>
+  <p><strong>Date:</strong> <%=@appointment.session_start.strftime("%A %B %e %Y") %></p>
+  <p><strong>Time:</strong> <%=@appointment.session_start.strftime("%I:%M:%S %p") %>(1 Hour)</p>
+  <p><strong>Venue:</strong> <%=@instructor.street_address %>, <%=@instructor.city %></p><br>
+  <%= link_to "Review order", edit_instructor_appointment_path(@instructor, @appointment) %>
 
-  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-  		  data-image="<%= @instructor.avatar.url(:thumb) %>"
-          data-key="<%= Figaro.env.stripe_publishable_key %>"
-          data-description="1 workout session with <%= @instructor.first_name %>"
-          data-name="GymHero"
-          data-amount="5000"></script>
-<% end %>
+  <%= form_tag instructor_appointment_charges_path do %>
+    <article>
+      <label class="amount">
+        <span>Amount: $50.00</span>
+      </label>
+    </article>
+
+
+    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          data-image="<%= @instructor.avatar.url(:thumb) %>"
+            data-key="<%= Figaro.env.stripe_publishable_key %>"
+            data-description="1 workout session with <%= @instructor.first_name %>"
+            data-name="GymHero"
+            data-amount="5000"></script>
+  <% end %>
+</div>

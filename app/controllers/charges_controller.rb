@@ -1,6 +1,7 @@
 class ChargesController < ApplicationController
   def new
     @instructor = Instructor.find(params[:instructor_id])
+    @appointment = Appointment.find(params[:appointment_id])
   end
 
   def create
